@@ -2,11 +2,12 @@ package com.adobe.model;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
@@ -18,11 +19,11 @@ public class Post {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String content;
-	private Date created_at;
+	private Date created_at = new Date();
 	private Date updated_at;
 	private Integer likes;
 	
 	@ManyToOne
-	@JoinColumn(name = "user_id")
+	@JsonIgnore
 	private User user;
 }

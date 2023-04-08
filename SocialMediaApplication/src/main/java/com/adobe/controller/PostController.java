@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.adobe.exceptions.PostException;
@@ -22,8 +23,8 @@ public class PostController {
 	private PostService postService;
 	
 	@PostMapping("/posts")
-	public ResponseEntity<String> createPostHandler(@RequestBody Post post){
-		return new ResponseEntity<String>(postService.createPost(post),HttpStatus.CREATED);
+	public ResponseEntity<String> createPostHandler(@RequestBody Post post, @RequestParam Integer userId){
+		return new ResponseEntity<String>(postService.createPost(userId,post),HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/posts/{id}")

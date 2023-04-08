@@ -1,5 +1,6 @@
 package com.adobe.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import jakarta.persistence.CascadeType;
@@ -28,7 +29,7 @@ public class User {
 	private Date updated_at;
 	private String password;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
 	@JsonIgnore
-	private List<Post> posts;
+	private List<Post> posts = new ArrayList<>();
 }

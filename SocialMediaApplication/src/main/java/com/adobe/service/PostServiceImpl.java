@@ -1,21 +1,33 @@
 package com.adobe.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.adobe.exceptions.PostException;
 import com.adobe.model.Post;
+import com.adobe.model.User;
 import com.adobe.repository.PostRepositoty;
+import com.adobe.repository.UserRepository;
 
 @Service
 public class PostServiceImpl implements PostService {
 
 	@Autowired
 	private PostRepositoty postRepo;
+	
+	@Autowired
+	private UserRepository userRepo;
 
 	@Override
-	public String createPost(Post post) {
+	public String createPost(Integer userId, Post post) {
+		User user = userRepo.findById(userId).get();
+		
+		post.setUser(user);
+		
 		postRepo.save(post);
+		
 		return "Post added Successfully !";
 	}
 
@@ -60,6 +72,17 @@ public class PostServiceImpl implements PostService {
 		}
 		
 		return "Unliked Successfully !";
+	}
+
+	@Override
+	public List<Post> getAllPost() throws PostException {
+		return postRepo.findAll();
+	}
+
+	@Override
+	public List<Post> getMostLikedTopFivePosts() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
