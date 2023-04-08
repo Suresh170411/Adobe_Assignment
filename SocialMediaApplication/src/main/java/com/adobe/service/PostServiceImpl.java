@@ -26,8 +26,11 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public Post updatePostById(Integer id, Post post) throws PostException {
-		// TODO Auto-generated method stub
-		return null;
+		Post existingPost = postRepo.findById(id).orElseThrow(() -> new PostException("No post found with the id : " + id));
+		
+		existingPost.setContent(post.getContent());
+		
+		return postRepo.save(existingPost);
 	}
 
 	@Override
@@ -39,14 +42,24 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public String increamentLike(Integer id) throws PostException {
-		// TODO Auto-generated method stub
-		return null;
+		Post existingPost = postRepo.findById(id).orElseThrow(() -> new PostException("No post found with the id : " + id));
+		
+		existingPost.setLikes(existingPost.getLikes() + 1);
+		
+		return "Liked Successfully !";
 	}
 
 	@Override
 	public String decreamentLike(Integer id) throws PostException {
-		// TODO Auto-generated method stub
-		return null;
+		Post existingPost = postRepo.findById(id).orElseThrow(() -> new PostException("No post found with the id : " + id));
+		
+		if (existingPost.getLikes() > 0) {
+			existingPost.setLikes(existingPost.getLikes() - 1);
+		}else {
+			throw new PostException("You have already unliked this post !");
+		}
+		
+		return "Unliked Successfully !";
 	}
 
 }

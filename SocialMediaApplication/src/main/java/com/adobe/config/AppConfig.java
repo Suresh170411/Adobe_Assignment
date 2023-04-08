@@ -21,7 +21,7 @@ public class AppConfig {
 		.and()
 		.csrf().disable()
 		.authorizeHttpRequests()
-		.requestMatchers(HttpMethod.POST, "/person/signUp").permitAll()
+		.requestMatchers(HttpMethod.POST, "/users").permitAll()
 		.requestMatchers("/swagger-ui*/**","/v3/api-docs/**").permitAll()
 		.anyRequest().authenticated().and()
 		.addFilterAfter(new JwtTokenGenerator(), BasicAuthenticationFilter.class)

@@ -9,6 +9,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @Entity
@@ -26,5 +29,6 @@ public class User {
 	private String password;
 	
 	@OneToMany(cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<Post> posts;
 }

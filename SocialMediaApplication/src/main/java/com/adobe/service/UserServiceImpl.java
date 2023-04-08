@@ -37,8 +37,12 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User updateUserById(Integer id, User user) throws UserException {
-		// TODO Auto-generated method stub
-		return null;
+		User existingUser = userRepo.findById(id).orElseThrow(() -> new UserException("No user found with the user id : " + id));
+		
+		existingUser.setName(user.getName());
+		existingUser.setBio(user.getBio());
+		
+		return userRepo.save(existingUser);
 	}
 
 	@Override
