@@ -12,7 +12,7 @@ import io.swagger.v3.oas.annotations.security.SecuritySchemes;
 import io.swagger.v3.oas.annotations.servers.Server;
 
 @SpringBootApplication
-@OpenAPIDefinition(info = @Info(title = "MY API", version = "1.1"),
+@OpenAPIDefinition(info = @Info(title = "Social Media for Adobe", version = "1.1"),
 security = {
 		@SecurityRequirement(name = "basicAuth"),
 		@SecurityRequirement(name = "bearerToken")
