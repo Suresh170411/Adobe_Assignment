@@ -54,8 +54,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> getTopFiveActiveUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		return userRepo.topFiveByPost();
 	}
 
 }

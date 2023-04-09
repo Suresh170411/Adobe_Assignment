@@ -81,8 +81,7 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public List<Post> getMostLikedTopFivePosts() {
-		// TODO Auto-generated method stub
-		return null;
+		return postRepo.getTopFivePost();
 	}
 
 }
