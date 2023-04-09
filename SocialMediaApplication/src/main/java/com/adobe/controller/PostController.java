@@ -1,5 +1,7 @@
 package com.adobe.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,5 +44,24 @@ public class PostController {
 		return new ResponseEntity<String>(postService.deletePostById(id), HttpStatus.OK);
 	}
 	
+	@PostMapping("/posts/{id}/like")
+	public ResponseEntity<String> getLikeIncreamentHandler(@PathVariable ("id") Integer id) throws PostException{
+		return new ResponseEntity<String>(postService.increamentLike(id),HttpStatus.OK);
+	}
+	
+	@PostMapping("/posts/{id}/unlike")
+	public ResponseEntity<String> getLikeDecreamentHandler(@PathVariable ("id") Integer id) throws PostException{
+		return new ResponseEntity<String>(postService.decreamentLike(id),HttpStatus.OK);
+	}
+	
+	@GetMapping("/analytics/posts")
+	public ResponseEntity<List<Post>> getAllPostHandler() throws PostException{
+		return new ResponseEntity<List<Post>>(postService.getAllPost(),HttpStatus.OK);
+	}
+	
+	@GetMapping("/analytics/posts/top-liked")
+	public ResponseEntity<List<Post>> getTopFiveLikedPostHandler(){
+		return new ResponseEntity<List<Post>>(postService.getMostLikedTopFivePosts(),HttpStatus.OK);
+	}
 	
 }

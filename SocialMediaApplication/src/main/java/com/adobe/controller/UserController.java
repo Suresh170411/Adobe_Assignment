@@ -56,6 +56,9 @@ public class UserController {
 		return new ResponseEntity<List<User>>(userService.getAllUsers(),HttpStatus.OK);
 	}
 	
-	
+	@GetMapping("/analytics/users/top-active")
+	public ResponseEntity<List<User>> getTopFiveUser(){
+		return new ResponseEntity<List<User>>(userService.getTopFiveActiveUsers(),HttpStatus.OK);
+	}
 	
 }
