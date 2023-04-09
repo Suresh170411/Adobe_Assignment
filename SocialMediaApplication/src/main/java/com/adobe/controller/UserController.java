@@ -12,6 +12,7 @@ import com.adobe.exceptions.UserException;
 import com.adobe.model.User;
 import com.adobe.service.UserService;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,6 +29,7 @@ public class UserController {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
+	@CrossOrigin
 	@PostMapping("/users")
 	public ResponseEntity<String> signUpUserHandler(@RequestBody User user){
 		
@@ -36,26 +38,31 @@ public class UserController {
 		return new ResponseEntity<String>(userService.signUpUser(user),HttpStatus.CREATED);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/users/{id}")
 	public ResponseEntity<User> getUserByIdHandler(@PathVariable ("id") Integer id) throws UserException{
 		return new ResponseEntity<User>(userService.getUserById(id),HttpStatus.OK);
 	}
 	
+	@CrossOrigin
 	@PutMapping("/users/{id}")
 	public ResponseEntity<User> updateUserByIdHandler(@RequestBody User user, @PathVariable ("id") Integer id) throws UserException{
 		return new ResponseEntity<User>(userService.updateUserById(id, user), HttpStatus.OK);
 	}
 	
+	@CrossOrigin
 	@DeleteMapping("/users/{id}")
 	public ResponseEntity<String> deleteUserByIdHandler(@PathVariable ("id") Integer id) throws UserException{
 		return new ResponseEntity<String>(userService.deleteUserById(id),HttpStatus.OK);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/analytics/users")
 	public ResponseEntity<List<User>> getAllUserHandler() throws UserException{
 		return new ResponseEntity<List<User>>(userService.getAllUsers(),HttpStatus.OK);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/analytics/users/top-active")
 	public ResponseEntity<List<User>> getTopFiveUser(){
 		return new ResponseEntity<List<User>>(userService.getTopFiveActiveUsers(),HttpStatus.OK);

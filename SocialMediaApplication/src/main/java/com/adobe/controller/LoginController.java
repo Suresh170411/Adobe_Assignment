@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.adobe.model.User;
@@ -17,6 +18,7 @@ public class LoginController {
 	@Autowired
 	private UserRepository userRepo;
 	
+	@CrossOrigin
 	@GetMapping("/signIn")
 	public ResponseEntity<User> getLoggedInCustomerDetailsHandler(Authentication auth){
 		
