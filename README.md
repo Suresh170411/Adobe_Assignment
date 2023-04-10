@@ -8,12 +8,13 @@ It is a social media application module where a user can make a post and can lik
 
 ## Features
 
-- User can signUp using the valid credentials
+- User can signUp using the valid credentials.
 - User can able to login using the valid credentials which is authorized by the spring security JWT token.
 - User can able to perform logOut as well.
 - User can post and like.
 - User can able to perform like and unlike functionality.
 - User can find top 5 post and top 5 active users as well.
+- User can able to perform all the CRUD operations.
 
 
 
