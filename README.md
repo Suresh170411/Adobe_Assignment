@@ -35,7 +35,53 @@ It is a social media application module where a user can make a post and can lik
 Starting up the server from the springBoot application
 ```
 <p align="left">
-  <img width="436" height="297" src="https://github.com/Suresh170411/Adobe_Assignment/blob/main/Images/SpringBoot%20Server.png">
+  <img width="500" height="297" src="https://github.com/Suresh170411/Adobe_Assignment/blob/main/Images/SpringBoot%20Server.png">
+</p>
+
+```
+Home page for front end of Swagger-ui
+```
+<p align="left">
+  <img width="500" height="297" src="https://github.com/Suresh170411/Adobe_Assignment/blob/main/Images/EndPoint-1.png">
+</p>
+<p align="left">
+  <img width="500" height="297" src="https://github.com/Suresh170411/Adobe_Assignment/blob/main/Images/EndPoint-2.png">
+</p>
+
+```
+Login a user by using the valid credentials
+```
+<p align="left">
+  <img width="500" height="297" src="https://github.com/Suresh170411/Adobe_Assignment/blob/main/Images/SignIn.png">
+</p>
+
+```
+After login user will be authenticated by bearer token
+```
+<p align="left">
+  <img width="500" height="297" src="https://github.com/Suresh170411/Adobe_Assignment/blob/main/Images/Bearer%20Token.png">
+</p>
+- You can copy this bearer token to use as a token for further authorization
+
+```
+Use this bearer token to authenticate to use furhter apis
+```
+<p align="left">
+  <img width="500" height="297" src="https://github.com/Suresh170411/Adobe_Assignment/blob/main/Images/Authorization%20using%20Bearer%20token.png">
+</p>
+
+```
+Use this bearer token to authenticate to use furhter apis
+```
+<p align="left">
+  <img width="500" height="297" src="https://github.com/Suresh170411/Adobe_Assignment/blob/main/Images/Authorize.png">
+</p>
+
+```
+To logout from the application simply hit logout button
+```
+<p align="left">
+  <img width="500" height="297" src="https://github.com/Suresh170411/Adobe_Assignment/blob/main/Images/Logout.png">
 </p>
 
 ## Swagger Documentation
