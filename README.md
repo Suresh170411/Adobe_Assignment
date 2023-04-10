@@ -1,7 +1,7 @@
 # Adobe_Assignment
 
 
-![](https://github.com/Suresh170411/PayPal_assignment/blob/main/Images/Checklist.jpg)
+![]()
 
 ## About
 It is a social media application module where a user can make a post and can like and unlike the post accordingly.
