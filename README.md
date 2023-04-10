@@ -59,7 +59,7 @@ Login a user by using the valid credentials
 After login user will be authenticated by bearer token
 ```
 <p align="left">
-  <img width="500" height="200" src="https://github.com/Suresh170411/Adobe_Assignment/blob/main/Images/Bearer%20Token.png">
+  <img width="700" height="200" src="https://github.com/Suresh170411/Adobe_Assignment/blob/main/Images/Bearer%20Token.png">
 </p>
 - You can copy this bearer token to use as a token for further authorization
 
