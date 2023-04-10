@@ -69,10 +69,6 @@ Use this bearer token to authenticate to use furhter apis
 <p align="left">
   <img width="500" height="250" src="https://github.com/Suresh170411/Adobe_Assignment/blob/main/Images/Authorization%20using%20Bearer%20token.png">
 </p>
-
-```
-Use this bearer token to authenticate to use furhter apis
-```
 <p align="left">
   <img width="500" height="250" src="https://github.com/Suresh170411/Adobe_Assignment/blob/main/Images/Authorize.png">
 </p>
