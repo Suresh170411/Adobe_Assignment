@@ -29,6 +29,15 @@ It is a social media application module where a user can make a post and can lik
 - Maven
 - Swagger-ui
 
+## Setup and user guide
+
+```
+Starting up the server from the springBoot application
+```
+<p align="left">
+  <img width="436" height="297" src="https://github.com/Suresh170411/Adobe_Assignment/blob/main/Images/SpringBoot%20Server.png">
+</p>
+
 ## Swagger Documentation
 ```
 http://localhost:8888/swagger-ui/index.html
